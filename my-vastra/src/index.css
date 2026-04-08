@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+.hoodie-float {
+  width: 100%;
+  max-width: 700px;
+  animation: floatLuxury 5.5s ease-in-out infinite;
+  filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.28));
+  transform-style: preserve-3d;
+}
+
+@keyframes floatLuxury {
+  0% {
+    transform: translateY(0px) rotateY(-10deg);
+  }
+  50% {
+    transform: translateY(-28px) rotateY(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(-10deg);
+  }
+}
+
+
+/* BIG COUTURE MONOGRAM */
+.luxury-v-text {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(180px, 22vw, 320px);
+  line-height: 1;
+  color: #5a1e2c; /* Deep Royal Burgundy */
+
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  animation: vReveal 1.8s cubic-bezier(.19,1,.22,1) forwards;
+}
+
+/* BRAND NAME */
+.luxury-brand-text {
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: 0.9em;
+  color: #7a2e3d; /* Soft Burgundy Accent */
+
+  opacity: 0;
+  animation: textLuxury 2s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* Elegant Luxury Line */
+.luxury-line {
+  margin-top: 40px;
+  width: 220px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7a2e3d, transparent);
+
+  transform: scaleX(0);
+  animation: lineExpand 2s ease forwards;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes vReveal {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes textLuxury {
+  to { opacity: 1; letter-spacing: 0.7em; }
+}
+
+@keyframes lineExpand {
+  to { transform: scaleX(1); }
+}
